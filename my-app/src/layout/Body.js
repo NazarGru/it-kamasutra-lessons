@@ -1,14 +1,12 @@
 import React , {Component} from 'react'
 import SidebarRow from './../sidebarType/SidebarRow';
 
-class Body extends Component {
-    render(){
-      return(
-        <div className='container white'>
-           <SidebarRow/>
-         </div>
-      )
-    }
+const Body = (props) => {
+  return(
+    <div className='container white'>
+       <SidebarRow state={props.state} />
+     </div>
+  )
   }
     
   export default Body;

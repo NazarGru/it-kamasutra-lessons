@@ -5,11 +5,11 @@ class NavBar extends Component {
     render(){
       return(
         <div>
-            <NavLink className="navLink" to="/pofile">
+            <NavLink className="navLink" exact  to="/pofile">
                 Profile
             </NavLink>
             <br/>
-            <NavLink className="navLink" to="/dialog">
+            <NavLink className="navLink" exact to="/dialog">
             Mesages
             </NavLink>
 

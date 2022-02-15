@@ -1,7 +1,7 @@
 import React , {Component} from 'react'
 
 class DialogPage extends Component {
-    render(){
+    render(props){
       return(
         <div>
            DialogPage

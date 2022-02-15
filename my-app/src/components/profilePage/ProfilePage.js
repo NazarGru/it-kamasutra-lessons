@@ -1,14 +1,21 @@
 import React , {Component} from 'react'
+import PostItem from './PostItem'
 
-class ProfilePage extends Component {
-    render(){
-      return(
-        <div>
-        ProfilePage
- 
-         </div>
-      )
-    }
+const ProfilePage = (props) => {
+
+  let postItem = () =>{
+    return(
+      props.state.posts.map(p => <PostItem state={props.profilePage.posts}/>)
+    )
+  };
+  return(
+    <div>
+      fdhgdf
+      {postItem}
+    </div>
+
+
+  )
   }
     
   export default ProfilePage;
