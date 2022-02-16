@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PostItem from './PostItem'
-import profileReducer from '../../redux/profile-reduser';
+// import profileReducer from '../../redux/profile-reduser';
+import { updateNewPostActionCreator, addPostActionCreator } from '../../redux/profile-reduser';
 
 const ProfilePage = (props) => {
   let newPostBody = props.state.profilePage.newPostText;
@@ -9,12 +10,12 @@ const ProfilePage = (props) => {
     .map(dialog => < PostItem messageText={dialog.messageText} />)
 
   let sendMessage = () => {
-
+    addPostActionCreator()
   }
 
   let changeMessage = (e) => {
     let body = e.target.value;
-    profileReducer(body)
+   updateNewPostActionCreator(body)
   }
 
 
