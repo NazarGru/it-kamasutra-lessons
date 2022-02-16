@@ -10,7 +10,7 @@ let renderEntaireTree = (state) => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={store.getState()} />
+        <App data={store.getState()} />
       </BrowserRouter>
 
     </React.StrictMode>,

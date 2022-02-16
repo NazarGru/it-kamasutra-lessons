@@ -2,15 +2,13 @@ import React , {Component} from 'react'
 import PostItem from './PostItem'
 
 const ProfilePage = (props) => {
+  let postItem = props.s.profilePage.posts.map((p) =>{
+    <PostItem s={props.s}/>
+  })
 
-  let postItem = () =>{
-    return(
-      props.state.posts.map(p => <PostItem state={props.profilePage.posts}/>)
-    )
-  };
   return(
     <div>
-      fdhgdf
+
       {postItem}
     </div>
 

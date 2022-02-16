@@ -4,9 +4,10 @@ const PostItem = (props) => {
 
   return(
     <div>
-        {props.state.id}
-        {props.state.messageText}
-        {props.state.likeCount}
+      {console.log(props.s.profilePage.posts.id)}
+        {props.s.profilePage.posts.id}
+        {props.s.profilePage.posts.messageText}
+        {props.s.profilePage.posts.likeCount}
 
      </div>
   )

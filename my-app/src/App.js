@@ -4,17 +4,17 @@ import Header from './layout/Header';
 import Body from './layout/Body';
 import Footer from './layout/Footer';
 
-
-const App =(props) =>  {
-  return (
-    <div className="wraper">
+class App extends Component {
+  render() {
+    return (
+      <div className="wraper">
       <Header />
-      <Body state={props.state} />
+      <Body data={this.props.data} />
       <Footer />
     </div>
-
-
-  )
+    );
+  }
 }
+
 
 export default App;
