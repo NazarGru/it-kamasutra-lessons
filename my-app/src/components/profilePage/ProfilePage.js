@@ -2,14 +2,14 @@ import React , {Component} from 'react'
 import PostItem from './PostItem'
 
 const ProfilePage = (props) => {
-  let postItem = props.s.profilePage.posts.map((p) =>{
-    <PostItem s={props.s}/>
-  })
+  debugger
+  let postItem = props.state.profilePage.posts
+  .map( dialog =>< PostItem  messageText={dialog.messageText}/>)
+
 
   return(
     <div>
-
-      {postItem}
+       {postItem}
     </div>
 
 

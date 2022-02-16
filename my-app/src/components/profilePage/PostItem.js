@@ -4,13 +4,14 @@ const PostItem = (props) => {
 
   return(
     <div>
-      {console.log(props.s.profilePage.posts.id)}
-        {props.s.profilePage.posts.id}
-        {props.s.profilePage.posts.messageText}
-        {props.s.profilePage.posts.likeCount}
-
+      <div>
+    
+        {props.messageText}
+      </div>
+      
      </div>
   )
+
   }
     
   export default PostItem;
