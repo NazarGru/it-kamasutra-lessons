@@ -24,7 +24,7 @@ let initialState = {
             likeCount: 12
         }
     ],
-    newPostText: 'sdgdfg'  
+    newPostText: ''  
 }
 
 const profileReducer = (state = initialState, action) =>{
