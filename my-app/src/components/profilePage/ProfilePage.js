@@ -2,20 +2,27 @@ import React, { Component } from 'react'
 import PostItem from './PostItem'
 // import profileReducer from '../../redux/profile-reduser';
 import { updateNewPostActionCreator, addPostActionCreator } from '../../redux/profile-reduser';
+import store from '../../redux/store';
 
 const ProfilePage = (props) => {
-  let newPostBody = props.state.profilePage.newPostText;
 
-  let postItem = props.state.profilePage.posts
+  let store = props.store;
+  let state = props.state.profilePage;
+  let newPostBody = state.newPostText;
+
+  let postItem = state.posts
     .map(dialog => < PostItem messageText={dialog.messageText} />)
 
   let sendMessage = () => {
-    addPostActionCreator()
+    props.dispatch(addPostActionCreator())
   }
 
   let changeMessage = (e) => {
-    let body = e.target.value;
-   updateNewPostActionCreator(body)
+    let text = e.target.value;
+    let action = updateNewPostActionCreator(text);
+    props.dispatch(action)
+
+    debugger
   }
 
 
@@ -34,6 +41,7 @@ const ProfilePage = (props) => {
 
 
   )
+
 }
 
 export default ProfilePage;

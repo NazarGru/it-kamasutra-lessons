@@ -9,7 +9,7 @@ const App = (props) => {
   return (
     <div className="wraper">
     <Header />
-    <Body state={props.state}  />
+    <Body state={props.state} store={props.store} />
     <Footer />
   </div>
   );

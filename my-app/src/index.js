@@ -7,17 +7,18 @@ import { BrowserRouter } from 'react-router-dom';
 import store from './redux/store'
 
 let renderEntaireTree = (state) => {
-
+  debugger
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
+        <App state={state}  />
       </BrowserRouter>
 
     </React.StrictMode>,
     document.getElementById('root')
   );
   reportWebVitals();
+
 }
 
 renderEntaireTree(store.getState());
