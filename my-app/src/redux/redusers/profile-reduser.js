@@ -24,7 +24,7 @@ let initialState = {
             likeCount: 12
         }
     ],
-    newPostText: 'ef'  
+    newPostText: ''  
 }
 
 const profileReducer = (state = initialState, action) =>{
@@ -35,9 +35,10 @@ const profileReducer = (state = initialState, action) =>{
                 messageText: state.newPostText,
                 likeCount: 0
             };
-            state.newPostText = '';
+       
             state.posts.push(newPost);
-         
+            state.newPostText = '';
+        
             return state;
 
         case UPDATE_NEW_POST_TEXT:

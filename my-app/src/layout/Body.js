@@ -4,7 +4,7 @@ import SidebarRow from './../sidebarType/SidebarRow';
 const Body = (props) => {
   return(
     <div className='container white'>
-       <SidebarRow state={props.state} store={props.store} />
+       <SidebarRow state={props.state} dispatch={props.dispatch} />
      </div>
   )
   }

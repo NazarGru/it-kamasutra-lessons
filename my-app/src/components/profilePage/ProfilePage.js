@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
+import { updateNewPostActionCreator, addPostActionCreator } from '../../redux/redusers/profile-reduser';
 import PostItem from './PostItem'
-// import profileReducer from '../../redux/profile-reduser';
-import { updateNewPostActionCreator, addPostActionCreator } from '../../redux/profile-reduser';
-import store from '../../redux/store';
+
 
 const ProfilePage = (props) => {
 
-  let store = props.store;
+ 
   let state = props.state.profilePage;
   let newPostBody = state.newPostText;
 
   let postItem = state.posts
-    .map(dialog => < PostItem messageText={dialog.messageText} />)
+    .map(post => < PostItem messageText={post.messageText} />)
 
   let sendMessage = () => {
     props.dispatch(addPostActionCreator())
@@ -21,8 +19,6 @@ const ProfilePage = (props) => {
     let text = e.target.value;
     let action = updateNewPostActionCreator(text);
     props.dispatch(action)
-
-    debugger
   }
 
 

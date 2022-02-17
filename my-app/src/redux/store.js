@@ -1,8 +1,9 @@
 import {combineReducers, createStore} from 'redux';
-import profileReducer from './profile-reduser'
-
+import profileReducer from './redusers/profile-reduser';
+import dialogReducer from './redusers/dialog-reduser';
 let reducersBatch = combineReducers({
-    profilePage: profileReducer
+    profilePage: profileReducer,
+    dialogPage: dialogReducer
 });
 
 

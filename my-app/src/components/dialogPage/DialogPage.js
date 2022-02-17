@@ -1,14 +1,38 @@
-import React , {Component} from 'react'
+import React, { Component } from 'react'
+import { addMessageActionCreator, updateMessageActionCreator } from '../../redux/redusers/dialog-reduser';
+import DialogItem from './DialogItem'
 
-class DialogPage extends Component {
-    render(props){
-      return(
-        <div>
-           DialogPage
- 
-         </div>
-      )
-    }
+const DialogPage = (props) => {
+  let state = props.state.dialogPage;
+  let newMessageText = state.newMessageText;
+
+  let dialogItem = state.messages
+    .map(dialog => < DialogItem messageText={dialog.messageText} />)
+
+  let sendMessage = () => {
+    props.dispatch(addMessageActionCreator())
   }
-    
-  export default DialogPage;
+
+  let changeMessage = (e) => {
+    let text = e.target.value;
+    let action = updateMessageActionCreator(text);
+    props.dispatch(action)
+  }
+
+
+  return (
+       <div>
+      <div>
+        <textarea value={newMessageText} onChange={changeMessage} />
+      </div>
+      <div>
+        <button onClick={sendMessage}>
+          send message
+        </button>
+      </div>
+      {dialogItem}
+    </div>
+  )
+}
+
+export default DialogPage;
