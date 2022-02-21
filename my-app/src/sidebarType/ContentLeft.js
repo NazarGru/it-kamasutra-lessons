@@ -1,14 +1,17 @@
 import React , {Component} from 'react'
 import DialogPage from '../components/dialogPage/DialogPage';
-import ProfilePage from '../components/profilePage/ProfilePage';
 import {Route, Routes} from "react-router-dom";
+import ProfilePageContainer from '../components/profilePage/ProfilePageContainer';
+import DialogPageContainer from '../components/dialogPage/DialogPageContainer';
 
 const ContentLeft = (props) => {
   return(
     <div  className='content-left-col'>
       <Routes>
-          <Route path="pofile" element={<ProfilePage state={props.state} dispatch={props.dispatch}/>}/>
-          <Route path="dialog" element={<DialogPage state={props.state} dispatch={props.dispatch} />}/>
+          <Route path="pofile" element={
+          <ProfilePageContainer  store={props.store} />}/>
+          <Route path="dialog" element={
+          <DialogPageContainer  />} />
       </Routes>
 
      </div>
