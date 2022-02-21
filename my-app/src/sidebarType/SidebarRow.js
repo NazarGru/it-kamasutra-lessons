@@ -6,7 +6,7 @@ const SidebarRow = (props) =>{
   return(
     <div className='sidebar_row'>
       <Sidebar/>
-      <ContentLeft  store={props.store}/>
+      <ContentLeft />
     </div>
 
   )

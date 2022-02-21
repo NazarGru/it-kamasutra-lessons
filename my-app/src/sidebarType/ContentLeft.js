@@ -8,10 +8,8 @@ const ContentLeft = (props) => {
   return(
     <div  className='content-left-col'>
       <Routes>
-          <Route path="pofile" element={
-          <ProfilePageContainer  store={props.store} />}/>
-          <Route path="dialog" element={
-          <DialogPageContainer  />} />
+          <Route path="pofile" element={ <ProfilePageContainer   />}/>
+          <Route path="dialog" element={<DialogPageContainer  />} />
       </Routes>
 
      </div>

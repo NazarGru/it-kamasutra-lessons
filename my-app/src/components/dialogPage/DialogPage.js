@@ -1,7 +1,6 @@
 import DialogItem from './DialogItem'
 
 const DialogPage = (props) => {
-  debugger
   let dialogItem = props.messages
     .map(dialog => < DialogItem messageText={dialog.messageText} />)
 

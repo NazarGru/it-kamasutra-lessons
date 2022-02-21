@@ -1,24 +1,26 @@
 import { updateNewPostActionCreator, addPostActionCreator } from '../../redux/redusers/profile-reduser';
 import ProfilePage from './ProfilePage';
+import {connect} from 'react-redux';
 
 
-const ProfilePageContainer = (props) => {
-  let state = props.store.getState().profilePage;
-
-
-  let sendMessage = () => {
-    props.store.dispatch(addPostActionCreator())
+let mapStateToProps = (state) =>{
+  return{
+    profilePage: state.profilePage,
+    posts: state.profilePage.posts,
+    newPostText: state.profilePage.newPostText
   }
-
-  let changeMessage = (text) => {
-    props.store.dispatch(updateNewPostActionCreator(text));
+}
+let mapDispatchToProps =(dispatch)=>{
+    return{
+      addPost: () => {
+        dispatch(addPostActionCreator())
+      },
+      updateNewPostText: (text) =>{
+        dispatch(updateNewPostActionCreator(text))
+      }
   }
-
-
-  return (
-    <ProfilePage updateNewPostText={changeMessage} addPost={sendMessage} posts={state.posts} newPostText={state.newPostText}/>
-  )
-
 }
 
+
+const  ProfilePageContainer = connect(mapStateToProps, mapDispatchToProps)(ProfilePage);
 export default ProfilePageContainer;
