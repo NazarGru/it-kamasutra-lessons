@@ -29,21 +29,26 @@ let initialState = {
 
 const dialogReducer = (state = initialState, action) =>{
     switch(action.type) {
-        case ADD_MESSAGE:
+        case ADD_MESSAGE:{
+          
             let newMessage = {
                 id: 5,
                 messageText: state.newMessageText,
                 likeCount: 0
             };
-        
-            state.messages.push(newMessage);
-            state.newMessageText = '';
+            let copyState = {...state};
+            copyState.messages = [...state.messages]
+            copyState.messages.push(newMessage);
+            copyState.newMessageText = '';
          
-            return state;
+            return copyState;
+        }
 
-        case UPDATE_MESSAGE_TEXT:
-            state.newMessageText = action.newText;
-            return state;
+        case UPDATE_MESSAGE_TEXT:{
+            let copyState = {...state};
+            copyState.newMessageText = action.newText;
+            return copyState;
+        }
         default:
             return state;
 

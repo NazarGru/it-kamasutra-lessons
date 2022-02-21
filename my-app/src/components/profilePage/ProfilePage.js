@@ -1,31 +1,25 @@
-import { updateNewPostActionCreator, addPostActionCreator } from '../../redux/redusers/profile-reduser';
 import PostItem from './PostItem'
 
 
 const ProfilePage = (props) => {
 
- 
-  let state = props.state.profilePage;
-  let newPostBody = state.newPostText;
-
-  let postItem = state.posts
+  let postItem = props.posts
     .map(post => < PostItem messageText={post.messageText} />)
 
   let sendMessage = () => {
-    props.dispatch(addPostActionCreator())
+    props.addPost();
   }
 
   let changeMessage = (e) => {
     let text = e.target.value;
-    let action = updateNewPostActionCreator(text);
-    props.dispatch(action)
+    props.updateNewPostText(text);
   }
 
 
   return (
     <div>
       <div>
-        <textarea value={newPostBody} onChange={changeMessage} />
+        <textarea value={props.newPostText} onChange={changeMessage} />
       </div>
       <div>
         <button onClick={sendMessage}>
